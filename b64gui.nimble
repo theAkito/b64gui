@@ -34,12 +34,21 @@ task fbuild, "Build project.":
   exec """nim c \
             --define:danger \
             --opt:speed \
+            --app:gui \
+            --cpu:amd64 \
+            --os:windows \
+            --gcc.exe:x86_64-w64-mingw32-gcc \
+            --gcc.linkerexe:x86_64-w64-mingw32-gcc \
             --out:b64gui \
             src/b64gui
        """
 task dbuild, "Debug Build project.":
   exec """nim c \
             --define:debug:true \
+            --cpu:amd64 \
+            --os:windows \
+            --gcc.exe:x86_64-w64-mingw32-gcc \
+            --gcc.linkerexe:x86_64-w64-mingw32-gcc \
             --debuginfo:on \
             --out:b64gui \
             src/b64gui

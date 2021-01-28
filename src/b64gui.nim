@@ -16,3 +16,4 @@ proc encodeFilesToFiles(filePaths: seq[string]) =
 
 when isMainModule:
   echo "Greetings!"
+  5000.sleep
