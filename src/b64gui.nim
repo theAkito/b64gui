@@ -4,8 +4,11 @@ import
   sequtils,
   os
 
+proc longLineBreak(): string = "\p\p\p"
+proc shortLineBreak(): string = "\p\p"
+
 proc encodeFilesToText(filePaths: seq[string]): seq[string] =
-  result = filePaths.mapIt(it.lastPathPart & "\p" & it.readFile.encode)
+  result = filePaths.mapIt(it.lastPathPart & shortLineBreak() & it.readFile.encode)
 
 proc encodeFilesToFiles(sourceFilePaths: seq[string], targetPath: string) =
   sourceFilePaths.apply(
@@ -27,6 +30,8 @@ when isMainModule:
     button_selectDirectoryToFiles = newButton("Select Directory and Save Files as Files")
     button_clearTextArea = newButton("Clear Text Area")
     textArea = newTextArea()
+  textArea.editable = false
+  textArea.wrap = false
   window.width = 600.scaleToDpi
   window.height = 400.scaleToDpi
   window.add(container)
@@ -83,6 +88,7 @@ when isMainModule:
       filePaths.encodeFilesToText.apply(
         proc (x: string) =
           textArea.addLine(x)
+          textArea.addLine(longLineBreak())
       )
       filePaths = @[]
       fileNames = @[]
@@ -101,6 +107,7 @@ when isMainModule:
       filePaths.encodeFilesToText.apply(
         proc (x: string) =
           textArea.addLine(x)
+          textArea.addLine(longLineBreak())
       )
       filePaths = @[]
       fileNames = @[]
