@@ -23,13 +23,13 @@ Linux, Windows, Mac.
 * Straight-forward
 
 ## Project Status
-Before Pre-Alpha
+Beta
 
 ## TODO
-* Assure Base64 encoding runs perfectly
-* Select Files
-* Select Folders
-* Add GUI
+* ~~Assure Base64 encoding runs perfectly~~
+* ~~Select Files~~
+* ~~Select Folders~~
+* ~~Add GUI~~
 
 ## License
 Copyright (C) 2020  Akito <the@akito.ooo>
