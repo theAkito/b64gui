@@ -2,10 +2,10 @@
 
 version       = "0.1.0"
 author        = "Akito <the@akito.ooo>"
-description   = "A new awesome nimble nimpackage."
+description   = "A new awesome nimble b64gui."
 license       = "GPL-3.0-or-later"
 srcDir        = "src"
-bin           = @["nimpackage"]
+bin           = @["b64gui"]
 skipDirs      = @["tasks"]
 skipFiles     = @["README.md"]
 skipExt       = @["nim"]
@@ -33,15 +33,15 @@ task fbuild, "Build project.":
   exec """nim c \
             --define:danger \
             --opt:speed \
-            --out:nimpackage \
-            src/nimpackage
+            --out:b64gui \
+            src/b64gui
        """
 task dbuild, "Debug Build project.":
   exec """nim c \
             --define:debug:true \
             --debuginfo:on \
-            --out:nimpackage \
-            src/nimpackage
+            --out:b64gui \
+            src/b64gui
        """
 task makecfg, "Create nim.cfg for optimized builds.":
   exec "nim tasks/cfg_optimized.nims"

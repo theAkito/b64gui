@@ -1,4 +1,4 @@
-[![nimble](https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png)](https://nimble.directory/pkg/nimpackage)
+[![nimble](https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png)](https://nimble.directory/pkg/b64gui)
 
 [![Language](https://img.shields.io/badge/language-Nim-orange.svg?style=plastic)](https://nim-lang.org/)
 
@@ -6,25 +6,30 @@
 [![Liberapay patrons](https://img.shields.io/liberapay/patrons/Akito?style=plastic)](https://liberapay.com/Akito/)
 
 ## What
-This is a base template for App projects written in Nim.
+Simple Base64 file encoder with a cross-platform GUI written in Nim.
 
 ## Why
-Allows kickstarting new projects, without fiddling around with metadata basics.
+Sometimes non-techy people need to encode something with Base64.
 
 ## How
-Select this is a template, when creating a new Git repository through a Git WebUI
+Run the executable and select the files or a folder filled with files to be encoded.
 
 ## Where
-Git.
+Linux, Windows, Mac.
 
 ## Goals
-* Performance
+* Ease of use
+* Simple
+* Straight-forward
 
 ## Project Status
-Stable
+Before Pre-Alpha
 
 ## TODO
-* Always improve
+* Assure Base64 encoding runs perfectly
+* Select Files
+* Select Folders
+* Add GUI
 
 ## License
 Copyright (C) 2020  Akito <the@akito.ooo>
