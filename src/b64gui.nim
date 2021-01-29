@@ -4,11 +4,12 @@ import
   sequtils,
   os
 
-proc longLineBreak(): string = "\p\p\p"
-proc shortLineBreak(): string = "\p\p"
+const
+  longLineBreak  = "\p\p\p"
+  shortLineBreak = "\p\p"
 
 proc encodeFilesToText(filePaths: seq[string]): seq[string] =
-  filePaths.mapIt(it.lastPathPart & shortLineBreak() & it.readFile.encode)
+  filePaths.mapIt(it.lastPathPart & shortLineBreak & it.readFile.encode)
 
 proc encodeFilesToFiles(sourceFilePaths: seq[string], targetPath: string) =
   sourceFilePaths.apply(
@@ -36,7 +37,7 @@ template printFilesToText() =
   filePaths.encodeFilesToText.apply(
     proc (x: string) =
       textArea.addLine(x)
-      textArea.addLine(longLineBreak())
+      textArea.addLine(longLineBreak)
   )
   resetFileCollections
 
@@ -59,16 +60,16 @@ template getSelectedFiles(printFilesToTextArea: bool): untyped =
 when isMainModule:
   app.init
   var
-    fileNames: seq[string]
-    filePaths: seq[string]
-    window = newWindow("Base64 GUI")
-    container = newLayoutContainer(Layout_Vertical)
-    button_selectFilesToText = newButton("Select Files and Print as Text")
-    button_selectFilesToFiles = newButton("Select Files and Save as Files")
-    button_selectDirectoryToText = newButton("Select Directory and Print Files as Text")
+    fileNames                     : seq[string]
+    filePaths                     : seq[string]
+    window                        = newWindow("Base64 GUI")
+    container                     = newLayoutContainer(Layout_Vertical)
+    button_selectFilesToText      = newButton("Select Files and Print as Text")
+    button_selectFilesToFiles     = newButton("Select Files and Save as Files")
+    button_selectDirectoryToText  = newButton("Select Directory and Print Files as Text")
     button_selectDirectoryToFiles = newButton("Select Directory and Save Files as Files")
-    button_clearTextArea = newButton("Clear Text Area")
-    textArea = newTextArea()
+    button_clearTextArea          = newButton("Clear Text Area")
+    textArea                      = newTextArea()
   let
     controllers: seq[ControlImpl] = @[
       button_selectFilesToText,

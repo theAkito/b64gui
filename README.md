@@ -23,7 +23,7 @@ Linux, Windows, Mac.
 * Straight-forward
 
 ## Project Status
-Beta
+Stable
 
 ## TODO
 * ~~Assure Base64 encoding runs perfectly~~
